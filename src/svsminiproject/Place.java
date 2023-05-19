@@ -1,19 +1,29 @@
 package svsminiproject;
 
-public class Place {
-	 private int id;
-	    private String name;
+// public class Place {
 
-	    public Place(int id, String name) {
-	        this.id = id;
-	        this.name = name;
-	    }
+// 	private int id;
+// 	private String name;
 
-	    public int getId() {
-	        return id;
-	    }
+// 	public Place(int id, String name) {
+// 		this.id = id;
+// 		this.name = name;
+// 	}
 
-	    public String getName() {
-	        return name;
-	    }
+// 	public int getId() {
+// 		return id;
+// 	}
+
+// 	public String getName() {
+// 		return name;
+// 	}
+// }
+class Place {
+	String name;
+	int tokens;
+
+	public Place(String name, int tokens) {
+		this.name = name;
+		this.tokens = tokens;
+	}
 }
