@@ -3,15 +3,15 @@ package svsminiproject;
 // import java.util.ArrayList;
 // import java.util.List;
 
-class Place {
-    String name;
-    int tokens;
+// class Place {
+//     String name;
+//     int tokens;
 
-    public Place(String name, int tokens) {
-        this.name = name;
-        this.tokens = tokens;
-    }
-}
+//     public Place(String name, int tokens) {
+//         this.name = name;
+//         this.tokens = tokens;
+//     }
+// }
 
 // class Transition {
 // String name;
