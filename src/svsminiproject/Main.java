@@ -6,7 +6,6 @@ import java.util.Set;
 public class Main {
 
 	public static void main(String[] args) {
-		// Create a Petri net and its graph of marking
 		Petrinet petriNet = new Petrinet();
 
 		Place p0 = new Place("p0", 1);
@@ -29,10 +28,19 @@ public class Main {
 		petriNet.addTransition(t0);
 		petriNet.addTransition(t1);
 
-		// Generate the NuSMV code
-		String nuSMVCode = RdPToNuSMV.generateNuSMVCode(petriNet);
+		Set<Marking> markingGraph = MarkingGraphGenerator.generateMarkingGraph(petriNet);
 
-		// Print the NuSMV code
+		int markingCount = 1;
+		for (Marking marking : markingGraph) {
+			System.out.println("Marking " + markingCount + ":");
+			for (Place place : petriNet.places) {
+				System.out.println(" " + place.name + ": " + marking.getTokens(place));
+			}
+			markingCount++;
+		}
+
+		String nuSMVCode = MarkingGraphGenerator.generateNuSMVCode(petriNet, markingGraph);
+
 		System.out.println(nuSMVCode);
 	}
 
